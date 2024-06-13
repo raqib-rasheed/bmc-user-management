@@ -1,0 +1,23 @@
+header {
+  border-bottom: 2px solid #2222220a;
+  padding: 1.5rem 2rem;
+
+  .search-creators-input {
+    border-radius: 4rem;
+    max-width: 400px;
+    .ant-input {
+      padding-left: 1rem;
+    }
+  }
+
+  .sign-in-button {
+    font-weight: 500;
+  }
+
+  .sign-up-button {
+    background: #9b62e0;
+    border-radius: 4rem;
+    color: white;
+    font-weight: 500;
+  }
+}

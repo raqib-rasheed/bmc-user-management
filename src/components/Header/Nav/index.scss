@@ -1,0 +1,11 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 400px;
+  a {
+    font-size: 1.4rem;
+    color: rgb(27, 27, 27);
+    text-decoration: none;
+  }
+}
