@@ -5,7 +5,6 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <div style={{ color: "black" }}>hi</div>
     </Layout>
   );
 }
