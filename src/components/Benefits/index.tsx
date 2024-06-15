@@ -12,7 +12,11 @@ export default function Benefits() {
             <img src={benefitConfig.smileyUrl} alt="emoji smiley face" />
             <h1>{benefitConfig.title}</h1>
             <p>{benefitConfig.description}</p>
-            <Button type="text" icon={<ArrowRightOutlined />}>
+            <Button
+              className="learn-more-button"
+              type="text"
+              icon={<ArrowRightOutlined />}
+            >
               Learn more
             </Button>
           </Col>

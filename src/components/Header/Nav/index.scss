@@ -7,6 +7,10 @@ nav {
     font-size: 1.4rem;
     color: rgb(27, 27, 27);
     text-decoration: none;
+
+    &:focus {
+      border: 1px solid rgb(125, 125, 126);
+    }
   }
 
   @media (max-width: 700px) {
