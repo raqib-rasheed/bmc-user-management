@@ -1,7 +1,5 @@
 import { Button, Input } from "antd";
 import "./index.scss";
-import { gradientCirclesConfig } from "./heroGradientsConfig";
-import { ChatScreenDemoImage } from "./ChatScreenImage";
 
 export default function Hero() {
   const Title = (
@@ -25,14 +23,17 @@ export default function Hero() {
     <section className="hero">
       {Title}
       {PhoneNumberInput}
-      {gradientCirclesConfig.map((gradient) => (
-        <img
-          alt={gradient.alt}
-          src={gradient.src}
-          className={gradient.className}
-        />
-      ))}
-      <ChatScreenDemoImage />
+
+      <img
+        alt="hero section gradient circle"
+        src="/hero-image-gradient.svg"
+        className="gradient-circles"
+      />
+      <img
+        alt="mobile screen image"
+        className="mobile-screen-images"
+        src="/hero-mobile-screen.svg"
+      />
     </section>
   );
 }

@@ -5,6 +5,7 @@ section.hero {
   padding: 5rem 4rem;
   align-items: center;
   height: calc(100vh - 165px);
+  min-height: 75rem;
   overflow: hidden;
 
   h1 {
@@ -51,75 +52,11 @@ section.hero {
     }
   }
 
-  .gradient-circle {
-    position: absolute;
-    bottom: 0;
-
-    &.purple {
-      bottom: -50%;
-    }
-
-    &.green {
-      left: -5%;
-      bottom: -40%;
-
-      &.right {
-        bottom: -40%;
-        right: -10%;
-        left: unset;
-      }
-    }
-  }
-
   .mobile-screen-images {
-    position: relative;
+    position: absolute;
+    bottom: 4rem;
     z-index: 2;
-
-    .mobile-screen {
-      margin-top: 6rem;
-    }
-
-    .voice-note {
-      position: absolute;
-      right: 50%;
-      top: 25%;
-    }
-
-    .girl-face {
-      position: absolute;
-      bottom: 13.5%;
-      right: -120%;
-    }
-
-    .gift-notification {
-      display: flex;
-      position: absolute;
-      bottom: 12%;
-      right: -140px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      color: #222222;
-      width: 180px;
-      height: 164px;
-      background: white;
-      border-radius: 3rem 0 3rem 3rem;
-      box-shadow: 0px 8.72px 52.35px 0px #0000001a;
-
-      h2 {
-        width: 70%;
-        text-align: center;
-      }
-
-      button {
-        color: #9b62e0;
-        font-weight: 800;
-        background-color: #9b62e014;
-        border: none;
-        border-radius: 2rem;
-      }
-    }
+    margin-top: 6rem;
   }
 
   @media (max-width: 800px) {
@@ -134,12 +71,19 @@ section.hero {
     h1 {
       font-size: 3.25rem;
     }
-    .gift-notification,
-    .voice-note,
-    .girl-face {
-      display: none !important;
-    }
     padding: 2.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .mobile-screen-images {
+      width: 50rem;
+      height: 50rem;
+      margin-top: 0rem;
+    }
+    .gradient-circles {
+      width: 50rem;
+      height: 50rem;
+    }
   }
 
   .phone-number-input {
