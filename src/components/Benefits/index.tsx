@@ -5,7 +5,7 @@ import { benefitsSectionConfig } from "./benefitscSectionConfig";
 
 export default function Benefits() {
   return (
-    <section className="benefits">
+    <section id="features" className="benefits">
       {benefitsSectionConfig.map((benefitConfig) => (
         <Row justify="center" align="middle">
           <Col order={benefitConfig.reverse ? 2 : 1} md={18} lg={7}>

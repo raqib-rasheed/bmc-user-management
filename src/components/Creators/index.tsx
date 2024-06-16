@@ -1,4 +1,4 @@
-import UserCardSlider from "./Slider";
+import UserCardSlider from "./SliderView";
 import "./index.scss";
 
 export default function Creators() {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./index.scss";
+import { capitalize } from "@/utils/helperMethods";
 
 const UserCardSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -65,10 +66,6 @@ const UserCardSlider: React.FC = () => {
     }
   }, [currentIndex]);
 
-  function getUserStatus(status: string) {
-    return status.charAt(0).toUpperCase() + status.slice(1);
-  }
-
   return (
     <div className="slider-container">
       <div className="slider" ref={sliderRef}>
@@ -78,7 +75,7 @@ const UserCardSlider: React.FC = () => {
             <div className="overlay-user-card">
               <div className="user-status">
                 <div className={`status-${card.status}`}></div>
-                {getUserStatus(card.status)}
+                {capitalize(card.status)}
               </div>
               <h2>{card.name}</h2>
             </div>

@@ -1,0 +1,18 @@
+.active {
+  color: #4c9a2a;
+  font-weight: 600;
+}
+
+.inactive {
+  color: #ff0000;
+  font-weight: 600;
+}
+
+.actions-container {
+  button:first-child {
+    margin-right: 2rem;
+  }
+  button:nth-child(2):hover svg {
+    color: #ff0000;
+  }
+}

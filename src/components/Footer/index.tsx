@@ -8,13 +8,13 @@ type footerLinksType = (typeof footerConfig)[0]["links"];
 export default function Footer() {
   const getFooterLinks = (links: footerLinksType) =>
     links.map((link) => (
-      <Col span={24}>
+      <Col key={link.key} span={24}>
         <Link to={link.path}>{link.label}</Link>
       </Col>
     ));
 
   return (
-    <footer>
+    <footer id="footer">
       <Row justify="center">
         <Col span={2}>
           <img src="/BMC-logo.svg" alt="BMC logo for footer" />
@@ -22,7 +22,7 @@ export default function Footer() {
         <Col span={16}>
           <Row>
             {footerConfig.map((typesConfig) => (
-              <Col span={6}>
+              <Col key={typesConfig.key} span={6}>
                 <Row gutter={[0, 16]}>
                   <Col span={24}>
                     <h3 style={{ color: "black" }} key={typesConfig.key}>

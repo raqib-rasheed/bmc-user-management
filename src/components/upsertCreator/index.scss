@@ -1,0 +1,31 @@
+.upsert-creator-modal {
+  .modal-title {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ebebeb;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 2.88rem;
+      margin: 0;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 3rem 2rem;
+    padding-bottom: 0;
+
+    .ant-form-item-label-left {
+      label {
+        font-weight: 600;
+      }
+    }
+    .upsertButton {
+      background-color: #9b62e0;
+
+      &:hover {
+        background-color: #4c9a2a;
+      }
+    }
+  }
+}
