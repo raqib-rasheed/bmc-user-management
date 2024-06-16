@@ -1,4 +1,7 @@
 .upsert-creator-modal {
+  .ant-modal-content {
+    min-width: 600px;
+  }
   .modal-title {
     padding-bottom: 1rem;
     border-bottom: 1px solid #ebebeb;

@@ -1,22 +1,18 @@
-import { Button, Col, Form, Input, Modal, ModalProps, Row, Select } from "antd";
-import { DataType } from "../Creators/TableView";
+import { Button, Col, Form, Modal, ModalProps, Row } from "antd";
+import { CreatorType } from "../Creators/TableView";
 import "./index.scss";
 import { CloseOutlined } from "@ant-design/icons";
+import FormInputs from "./FormInputs";
+import { useCallback } from "react";
+import { postCreators, updateCreators } from "@/services/creators";
 
 export enum MODAL_MODES {
   EDIT = "Edit",
   ADD = "ADD",
 }
 
-type FieldType = {
-  name?: string;
-  email?: string;
-  gender?: string;
-  status?: string;
-};
-
 interface IUpsertModal extends ModalProps {
-  record?: DataType;
+  record?: CreatorType;
   mode?: MODAL_MODES;
 }
 
@@ -41,8 +37,18 @@ export default function UpsertModal(props: IUpsertModal) {
     </Row>
   );
 
-  const submitButtonText =
-    props?.mode === MODAL_MODES.EDIT ? "Update" : "+ Add creator";
+  const upsertData = useCallback((formData: CreatorType) => {
+    const isAddNewMode = props.mode === MODAL_MODES.ADD;
+    const upsertMethod = isAddNewMode ? postCreators : updateCreators;
+    const upsertData = isAddNewMode
+      ? formData
+      : {
+          ...formData,
+          id: props?.record?.id ?? 0,
+        };
+
+    upsertMethod(upsertData);
+  }, []);
 
   return (
     <Modal
@@ -51,6 +57,8 @@ export default function UpsertModal(props: IUpsertModal) {
       title={Title}
       {...props}
       footer={null}
+      width="45vw"
+      destroyOnClose
     >
       <Form
         name="basic"
@@ -58,44 +66,12 @@ export default function UpsertModal(props: IUpsertModal) {
         labelAlign="left"
         labelCol={{ span: 7 }}
         initialValues={props.record ?? undefined}
-        onFinish={() => {}}
+        onFinish={upsertData}
         onFinishFailed={() => {}}
         autoComplete="off"
         requiredMark={false}
       >
-        <Form.Item<FieldType>
-          label="Creator Name"
-          name="name"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
-          <Input size="large" placeholder="Enter creator's name" />
-        </Form.Item>
-        <Form.Item<FieldType>
-          label="Email"
-          name="email"
-          rules={[{ required: true, message: "Please input your password!" }]}
-        >
-          <Input size="large" placeholder="Enter email" />
-        </Form.Item>
-        <Form.Item<FieldType>
-          label="Gender"
-          name="gender"
-          rules={[{ required: true, message: "Please input your password!" }]}
-        >
-          <Select
-            size="large"
-            defaultValue="male"
-            options={[
-              { label: "Male", value: "male" },
-              { label: "Female", value: "female" },
-            ]}
-          />
-        </Form.Item>
-        <Form.Item wrapperCol={{ offset: 7, span: 16 }}>
-          <Button className="upsertButton" type="primary" htmlType="submit">
-            {submitButtonText}
-          </Button>
-        </Form.Item>
+        <FormInputs mode={props.mode} status={props.record?.status} />
       </Form>
     </Modal>
   );

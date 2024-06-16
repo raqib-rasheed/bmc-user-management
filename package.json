@@ -39,5 +39,6 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-tsconfig-paths": "^4.3.2"
-  }
+  },
+  "proxy": "https: //gorest.co.in/public/v2/users"
 }
