@@ -19,11 +19,8 @@ export default function Hero() {
     </div>
   );
 
-  return (
-    <section className="hero">
-      {Title}
-      {PhoneNumberInput}
-
+  const HeroImage = (
+    <>
       <img
         alt="hero section gradient circle"
         src="/hero-image-gradient.svg"
@@ -34,6 +31,14 @@ export default function Hero() {
         className="mobile-screen-images"
         src="/hero-mobile-screen.svg"
       />
+    </>
+  );
+
+  return (
+    <section className="hero">
+      {Title}
+      {PhoneNumberInput}
+      {HeroImage}
     </section>
   );
 }
