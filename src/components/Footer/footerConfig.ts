@@ -43,7 +43,7 @@ export const footerConfig = [
   },
   {
     title: "Community",
-    key: "1",
+    key: "3",
     links: [
       {
         path: "/",
@@ -64,7 +64,7 @@ export const footerConfig = [
   },
   {
     title: "More",
-    key: "3",
+    key: "4",
     links: [
       {
         path: "/",

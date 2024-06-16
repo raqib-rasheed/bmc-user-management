@@ -3,7 +3,11 @@ import Nav from "./Nav";
 import "./index.scss";
 import { SearchOutlined } from "@ant-design/icons";
 
-export default function Header() {
+interface IHeaderProps {
+  showSearchAndAuthActions?: boolean;
+}
+
+export default function Header(props: IHeaderProps) {
   const linkAndLogoSpanProps = {
     xs: { flex: "20%" },
     sm: { flex: "45%" },
@@ -60,10 +64,21 @@ export default function Header() {
           </Row>
         </Col>
         <Col {...searchAndButtonsSpanProps}>
-          <Row className="search-auth-buttons-container" justify="end">
-            {HeaderSearch}
-            {AuthenticationButtons}
-          </Row>
+          {props?.showSearchAndAuthActions ? (
+            <Row className="search-auth-buttons-container" justify="end">
+              {HeaderSearch}
+              {AuthenticationButtons}
+            </Row>
+          ) : (
+            <Row gutter={[12, 0]} align="middle" justify="end">
+              <Col>
+                <span className="text-admin">Admin</span>
+              </Col>
+              <Col>
+                <img src="/admin-profile-pic.svg" />
+              </Col>
+            </Row>
+          )}
         </Col>
       </Row>
     </header>
