@@ -4,7 +4,7 @@ import { capitalize } from "@/utils/helperMethods";
 import { DeleteOutlined } from "@ant-design/icons";
 import { useCallback, useState } from "react";
 import useOpen from "@/utils/useOpen";
-import UpsertModal, { MODAL_MODES } from "@/components/upsertCreator";
+import UpsertModal, { MODAL_MODES } from "@/components/UpsertCreator";
 
 export interface DataType {
   id: number;
