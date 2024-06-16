@@ -1,6 +1,6 @@
 import { Table, notification } from "antd";
 import "./index.scss";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useOpen from "@/utils/useOpen";
 import UpsertModal, { MODAL_MODES } from "@/components/UpsertCreator";
 import { deleteCreators, getCreators } from "@/services/creators";
@@ -33,12 +33,9 @@ export default function CreatorsTable() {
     [toggleUpsertModalVisibilty]
   );
 
-  const handleDeleteActionClick = useCallback(
-    (record: CreatorType) => {
-      setCreatorRecordToDelete(record);
-    },
-    [toggleUpsertModalVisibilty]
-  );
+  const handleDeleteActionClick = useCallback((record: CreatorType) => {
+    setCreatorRecordToDelete(record);
+  }, []);
 
   useEffect(() => {
     setLoadingCreators(true);

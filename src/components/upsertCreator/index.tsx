@@ -37,18 +37,21 @@ export default function UpsertModal(props: IUpsertModal) {
     </Row>
   );
 
-  const upsertData = useCallback((formData: CreatorType) => {
-    const isAddNewMode = props.mode === MODAL_MODES.ADD;
-    const upsertMethod = isAddNewMode ? postCreators : updateCreators;
-    const upsertData = isAddNewMode
-      ? formData
-      : {
-          ...formData,
-          id: props?.record?.id ?? 0,
-        };
+  const upsertData = useCallback(
+    (formData: CreatorType) => {
+      const isAddNewMode = props.mode === MODAL_MODES.ADD;
+      const upsertMethod = isAddNewMode ? postCreators : updateCreators;
+      const upsertData = isAddNewMode
+        ? formData
+        : {
+            ...formData,
+            id: props?.record?.id ?? 0,
+          };
 
-    upsertMethod(upsertData);
-  }, []);
+      upsertMethod(upsertData);
+    },
+    [props.mode, props?.record?.id]
+  );
 
   return (
     <Modal

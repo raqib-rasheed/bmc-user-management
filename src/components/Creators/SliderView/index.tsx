@@ -71,7 +71,15 @@ const UserCardSlider: React.FC = () => {
       <div className="slider" ref={sliderRef}>
         {cards.map((card, index) => (
           <div className="card" key={index}>
-            <img width={250} height={270} src={"/benefits-section-lady.svg"} />
+            <img
+              width={250}
+              height={270}
+              src={
+                index % 3 === 0
+                  ? "https://xsgames.co/randomusers/avatar.php?g=male"
+                  : "https://xsgames.co/randomusers/avatar.php?g=female"
+              }
+            />
             <div className="overlay-user-card">
               <div className="user-status">
                 <div className={`status-${card.status}`}></div>
