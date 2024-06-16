@@ -1,0 +1,53 @@
+header {
+  border-bottom: 2px solid #2222220a;
+  padding: 1.5rem 2rem;
+
+  .search-creators-input {
+    border-radius: 4rem;
+    max-width: 400px;
+    .ant-input {
+      padding-left: 1rem;
+    }
+  }
+
+  .sign-in-button {
+    font-weight: 500;
+  }
+
+  .sign-up-button {
+    background: #9b62e0;
+    border-radius: 4rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .auth-buttons-for-small-screen {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1.15rem;
+
+    .header-search-container {
+      flex: 40%;
+    }
+  }
+
+  @media (max-width: 650px) {
+    padding: 1.5rem 1rem;
+
+    .search-creators-input {
+      .ant-input {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .sign-up-button,
+    .sign-in-button {
+      font-size: 1.2rem;
+      padding: 0.75rem;
+    }
+  }
+}

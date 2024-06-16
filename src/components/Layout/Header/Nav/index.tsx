@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <nav role="navigation">
       {navConfig.map((navItem) => (
-        <Link key={navItem.path} to={navItem.path}>
+        <Link key={navItem.key} to={navItem.path}>
           {navItem.label}
         </Link>
       ))}

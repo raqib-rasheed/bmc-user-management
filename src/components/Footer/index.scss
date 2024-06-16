@@ -1,0 +1,30 @@
+footer {
+  padding: 10rem 0;
+  text-align: left;
+
+  p {
+    color: #000000af;
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: 500;
+    line-height: 3rem;
+    margin: 0;
+  }
+
+  a {
+    color: #000000af;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+  }
+
+  .app-download-container {
+    margin-top: 6rem;
+    img:first-child {
+      margin-right: 2rem;
+    }
+  }
+}

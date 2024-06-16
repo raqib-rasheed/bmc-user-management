@@ -7,5 +7,15 @@ nav {
     font-size: 1.4rem;
     color: rgb(27, 27, 27);
     text-decoration: none;
+
+    &:focus {
+      color: rgb(134, 175, 230);
+    }
+  }
+
+  @media (max-width: 700px) {
+    a {
+      display: none;
+    }
   }
 }

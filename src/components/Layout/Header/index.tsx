@@ -5,17 +5,17 @@ import { SearchOutlined } from "@ant-design/icons";
 
 export default function Header() {
   const linkAndLogoSpanProps = {
-    xs: { flex: "60%" },
-    sm: { flex: "43%" },
-    md: { flex: "45%" },
+    xs: { flex: "20%" },
+    sm: { flex: "45%" },
+    md: { flex: "60%" },
     lg: { flex: "40%" },
     xl: { flex: "30%" },
   };
 
   const searchAndButtonsSpanProps = {
-    xs: { flex: "40%" },
-    sm: { flex: "57%" },
-    md: { flex: "55%" },
+    xs: { flex: "80%" },
+    sm: { flex: "55%" },
+    md: { flex: "40%" },
     xl: { flex: "45%" },
   };
 
@@ -32,7 +32,7 @@ export default function Header() {
   );
 
   const HeaderSearch = (
-    <Col span={14}>
+    <Col className="header-search-container" {...searchAndButtonsSpanProps}>
       <Input
         className="search-creators-input"
         prefix={<SearchOutlined />}
@@ -60,7 +60,7 @@ export default function Header() {
           </Row>
         </Col>
         <Col {...searchAndButtonsSpanProps}>
-          <Row justify="space-around">
+          <Row className="search-auth-buttons-container" justify="end">
             {HeaderSearch}
             {AuthenticationButtons}
           </Row>
