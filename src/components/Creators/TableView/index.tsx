@@ -2,9 +2,9 @@ import { Table, notification } from "antd";
 import "./index.scss";
 import { useCallback, useEffect, useState } from "react";
 import useOpen from "@/utils/useOpen";
-import UpsertModal, { MODAL_MODES } from "@/components/UpsertCreator";
 import { deleteCreators, getCreators } from "@/services/creators";
 import { getTableColumns } from "./columns";
+import UpsertModal, { MODAL_MODES } from "@/components/upsertCreator/index";
 
 export interface CreatorType {
   id: number;

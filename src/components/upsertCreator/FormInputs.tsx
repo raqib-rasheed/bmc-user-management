@@ -1,6 +1,6 @@
 import { Button, Form, Input, Radio, Select } from "antd";
-import { MODAL_MODES } from ".";
 import { useState } from "react";
+import { MODAL_MODES } from ".";
 
 type FieldType = {
   name?: string;

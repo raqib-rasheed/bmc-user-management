@@ -2,9 +2,9 @@ import { Button, Col, Form, Modal, ModalProps, Row } from "antd";
 import { CreatorType } from "../Creators/TableView";
 import "./index.scss";
 import { CloseOutlined } from "@ant-design/icons";
-import FormInputs from "./FormInputs";
 import { useCallback } from "react";
 import { postCreators, updateCreators } from "@/services/creators";
+import FormInputs from "@/components/upsertCreator/FormInputs";
 
 export enum MODAL_MODES {
   EDIT = "Edit",
