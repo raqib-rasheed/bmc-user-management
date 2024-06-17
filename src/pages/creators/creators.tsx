@@ -3,7 +3,7 @@ import { PlusOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { Button, Col, Row } from "antd";
 import "./index.scss";
 import useOpen from "@/utils/useOpen";
-import UpsertModal, { MODAL_MODES } from "@/components/UpsertCreator";
+import UpsertModal, { MODAL_MODES } from "@/components/upsertCreator";
 
 export default function CreatorsPage() {
   const {
