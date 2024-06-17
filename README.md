@@ -1,3 +1,5 @@
+### Refer https://raqib-dev.notion.site/BMC-Assessment-445e6099a0d44abd9364033823965d92 for solution details
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
