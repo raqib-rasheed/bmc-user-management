@@ -5,7 +5,7 @@ interface IUpdateCreatorsFormData extends CreatorType {
   id: number;
 }
 
-const Authorization = "Bearer " + process.env.REACT_APP_API_KEY;
+const Authorization = "Bearer " + import.meta.env.VITE_API_KEY;
 
 const BASE_URL = "https://gorest.co.in/public/v2";
 const axiosInstance = axios.create({
