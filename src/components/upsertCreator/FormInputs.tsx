@@ -38,7 +38,12 @@ export default function FormInputs(props: IUpsertForm) {
         <Input size="large" placeholder="Enter email" />
       </Form.Item>
       <Form.Item<FieldType> label="Gender" name="gender">
-        <Select onChange={setGender} size="large" value={gender}>
+        <Select
+          defaultValue="male"
+          onChange={setGender}
+          size="large"
+          value={gender}
+        >
           <Select.Option value="male">Male</Select.Option>
           <Select.Option value="female">Female</Select.Option>
         </Select>

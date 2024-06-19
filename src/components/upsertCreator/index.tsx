@@ -1,4 +1,4 @@
-import { Button, Col, Form, Modal, ModalProps, Row } from "antd";
+import { Button, Col, Form, Modal, ModalProps, Row, notification } from "antd";
 import { CreatorType } from "../Creators/TableView";
 import "./index.scss";
 import { CloseOutlined } from "@ant-design/icons";
@@ -12,6 +12,7 @@ export enum MODAL_MODES {
 }
 
 interface IUpsertModal extends ModalProps {
+  onClose: () => void;
   record?: CreatorType;
   mode?: MODAL_MODES;
 }
@@ -41,14 +42,30 @@ export default function UpsertModal(props: IUpsertModal) {
     (formData: CreatorType) => {
       const isAddNewMode = props.mode === MODAL_MODES.ADD;
       const upsertMethod = isAddNewMode ? postCreators : updateCreators;
-      const upsertData = isAddNewMode
-        ? formData
-        : {
-            ...formData,
-            id: props?.record?.id ?? 0,
-          };
+      const sucessMessage = isAddNewMode
+        ? "Added new creator"
+        : "Updated creator details";
 
-      upsertMethod(upsertData);
+      const { email, gender, name, status } = formData;
+      let payload = {
+        email,
+        name,
+        gender: gender ?? "male",
+        status: status ?? "active",
+      };
+
+      upsertMethod(
+        isAddNewMode
+          ? { ...payload, id: props?.record?.id ?? 0 }
+          : { ...payload, id: props?.record?.id ?? 0 }
+      )
+        .then(() => {
+          notification.success({ message: sucessMessage });
+          props.onClose?.();
+        })
+        .catch(() => {
+          notification.error({ message: "Something went wrong..!" });
+        });
     },
     [props.mode, props?.record?.id]
   );
